@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         *{
+            font-family: 'Press Start 2P', cursive;
             box-sizing: border-box;
             padding: 0px;
             margin: 0px;
         }
     </style>
 </head>
-<body>
+<body style="display: flex; justify-content: center; background-color: black; align-items: center;height: 100vh;">
+    <audio class="soundTrack" src="audio/soundtrack.mp3" loop autoplay></audio>
     <div style="position: relative; display: inline-block;">
-        <div style="position: absolute; display: flex; width: 100%; align-items: center; padding: 20px;">
-            <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end;">
-                <div  style="background-color: yellow; height: 30px; width: 100%;"></div> 
-                <div id="playerHealth" style="position: absolute; background: blue; top:0; right:0; bottom: 0; width: 100%;"></div>
+        <div style="position: absolute; display: flex; width: 100%; align-items: center; padding: 20px; " >
+            <div style=" border-bottom: 4px solid white; border-left: 4px solid white; border-top: 4px solid white; position: relative; width: 100%; display: flex; justify-content: flex-end;">
+                <div  style="background-color: red; height: 30px; width: 100%;"></div> 
+                <div id="playerHealth" style="position: absolute; background: #818cf8; top:0; right:0; bottom: 0; width: 100%;"></div>
             </div>
             <div 
                 id="timer"
                 style="
-                    background-color: red; 
-                    height: 100px; 
+                    background-color: black; 
+                    height: 50px; 
                     width:100px; 
                     flex-shrink: 0; 
                     display: flex; 
                     align-items: center; 
                     justify-content: center; 
                     color: white; 
-                    font-size: 3rem;
+                    font-size: 1.5rem;
+                    border: 4px solid white; 
                 "
             >
                 10
             </div>
             
             
-            <div style="position: relative; height: 30px; width: 100%; display: flex;">
-                <div  style="background-color: yellow; height: 30px; width: 100%;"></div> 
-                <div id="enemyHealth" style="position: absolute; background: blue; top:0; right:0; bottom: 0; left:0"></div>
+            <div style="position: relative;  width: 100%; display: flex;border-bottom: 4px solid white; border-right: 4px solid white; border-top: 4px solid white;">
+                <div  style="background-color: red; height: 30px; width: 100%;"></div> 
+                <div id="enemyHealth" style="position: absolute; background: #818cf8; top:0; right:0; bottom: 0; left:0"></div>
             </div>
             
             <div></div>
@@ -50,9 +56,15 @@
             style="
             position: absolute; 
             color: white; 
+            text-shadow: 
+               -3px -3px 0px #000, 
+               -3px 3px 0px #000,                    
+                3px -3px 0px #000,                  
+                3px 0px 0px #000;
             display: none; 
             align-items: 
             center; 
+            font-size: 1.5rem;
             justify-content: center;
             top: 0;
             bottom: 0;
@@ -64,6 +76,12 @@
         <canvas></canvas>
         
     </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
     <script src="js/utils.js"></script>
     <script src="js/classes.js"></script>
     <script src="index.js"></script>
